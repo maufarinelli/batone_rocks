@@ -6,15 +6,20 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
 
 	<script src="js/batone-app.js"></script>
 	<script src="js/Bg/bg.controller.js"></script>
+
+	<script src="js/external/soundcloud.api.js"></script>
+	<script src="js/Player/player.controller.js"></script>
 </head>
 <body>
 	<div id="wrapper" ng-app="batoneApp">
 		<header>
 			<nav>
 				<ul>
+					<li><a href="#"><img src="img/logo2.png" alt="Batone"></a></li>
 					<li><a href="#">Lixo Extraordinário</a></li>
 					<li><a href="#">Disquinho de Bolso</a></li>
 					<li><a href="#">Videos</a></li>
@@ -25,10 +30,11 @@
 			</nav>
 		</header>
 		<section id="bg-photo" ng-controller="BgController"></section>
+		<section ng-view></section>
 		<footer></footer>
 	</div>
 	
-	<!-- <script src="js/soundcloud.api.js"></script>
+	<!-- 
 	<script src="js/player.js"></script> -->
 </body>
 </html>

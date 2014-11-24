@@ -8,7 +8,7 @@
     }
 
     BgController.prototype.init = function() {
-        setTimeout(this.animate, 4000);
+        setTimeout(this.animate, 3500);
     }
 
     BgController.prototype.animate = function() {
