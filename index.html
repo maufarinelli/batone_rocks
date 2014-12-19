@@ -7,39 +7,41 @@
 	<link href='http://fonts.googleapis.com/css?family=Wire+One|Muli|Yanone+Kaffeesatz:400,300|Raleway:400,500' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="js/external/lodash.js"></script>
 	<script src="bower_components/angular-route/angular-route.min.js"></script>
-
-	<script src="js/batone-app.js"></script>
-	<script src="js/Bg/bg.controller.js"></script>
-
-	<script src="js/external/soundcloud.api.js"></script>
-	<script src="js/Player/player.controller.js"></script>
 </head>
 <body>
 	<div id="wrapper" ng-app="batoneApp">
 		<header>
 			<nav>
 				<ul>
-					<li><a href="#"><img src="img/logo2.png" alt="Batone"></a></li>
-					<li>Albums
+					<li><a href="/#/player"><img src="img/logo2.png" alt="Batone"></a></li>
+					<li class="dropdown">Albums
 						<ul>
-							<li><a href="#">Lixo Extraordinário</a></li>
-							<li><a href="#">Disquinho de Bolso</a></li>
+							<li><a href="#" target="_blank" title="O conteúdo será aberto em uma nova janela">Lixo Extraordinário</a></li>
+							<li><a href="#" target="_blank" title="O conteúdo será aberto em uma nova janela">Disquinho de Bolso</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Videos</a></li>
-					<li><a href="#">Player</a></li>
-					<li><a href="#">Downloads</a></li>
-					<li><a href="#">Contato</a></li>
+					<li><a href="/#/videos">Videos</a></li>
+					<li><a href="/#/player">Player</a></li>
+					<li><a href="/#/download">Downloads</a></li>
+					<li><a href="/#/contato">Contato</a></li>
 				</ul>
 			</nav>
 		</header>
-		<section id="bg-photo" ng-controller="BgController"></section>
-		<section ng-view></section>
+		<section id="bg-photo" ng-controller="BgController" ng-class="{'new-visitor': newVisitor}" ></section>
+		<section class="view" ng-view></section>
 		<footer></footer>
 	</div>
 	
-	<!-- 
-	<script src="js/player.js"></script> -->
+	<script src="js/batone-app.js"></script>
+	<script src="js/Bg/bg.controller.js"></script>
+
+	<script src="js/external/soundcloud.api.js"></script>
+	<script src="js/Player/player.controller.js"></script>
+
+	<script src="js/Contact/contact.controller.js"></script>
+	<script src="js/Videos/videos.controller.js"></script>
+	<script src="js/Videos/videos.directive.js"></script>
 </body>
 </html>

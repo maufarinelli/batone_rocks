@@ -1,26 +1,37 @@
 'use strict';
 
 (function(angular) {
+    var _self;
 
-    function BgController() {
-        this.init();
-        //setTimeout(this.animate, 4000);
-    }
+    function BgController($scope) {
+        var windowWidth = window.innerWidth,
+            batonePhotoWidth = 1080;
 
-    BgController.prototype.init = function() {
-        setTimeout(this.animate, 3500);
+        _self = this;
+        this.toMove = windowWidth - ((windowWidth - batonePhotoWidth) / 2) - batonePhotoWidth/2;
+
+        $scope.newVisitor = localStorage.newVisitor ? false : true;
+        
+        if($scope.newVisitor) { 
+            this.animate();
+        }
+        else {
+            this.posRight();
+        }
     }
 
     BgController.prototype.animate = function() {
-        var windowWidth = window.innerWidth,
-            batonePhotoWidth = 1080,
-            toMove = windowWidth - ((windowWidth - batonePhotoWidth) / 2) - batonePhotoWidth/2;
+        setTimeout(this.posRight, 3500);
+    }
 
-        document.getElementById('bg-photo').style.webkitTransform = 'translateX('+ toMove +'px)';
-        document.getElementById('bg-photo').style.MozTransform = 'translateX('+ toMove +'px)';
-        document.getElementById('bg-photo').style.msTransform = 'translateX('+ toMove +'px)';
-        document.getElementById('bg-photo').style.OTransform = 'translateX('+ toMove +'px)';
-        document.getElementById('bg-photo').style.transform = 'translateX('+ toMove +'px)';
+    BgController.prototype.posRight = function() {
+        document.getElementById('bg-photo').style.webkitTransform = 'translateX('+ _self.toMove +'px)';
+        document.getElementById('bg-photo').style.MozTransform = 'translateX('+ _self.toMove +'px)';
+        document.getElementById('bg-photo').style.msTransform = 'translateX('+ _self.toMove +'px)';
+        document.getElementById('bg-photo').style.OTransform = 'translateX('+ _self.toMove +'px)';
+        document.getElementById('bg-photo').style.transform = 'translateX('+ _self.toMove +'px)';
+
+        localStorage.newVisitor = false;
     };
 
     angular.module('bg', [])

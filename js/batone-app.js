@@ -4,7 +4,9 @@
     angular.module('batoneApp', [
         'ngRoute',
         'bg',
-        'player'
+        'player',
+        'videos',
+        'contact'
     ])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/videos', {
@@ -20,8 +22,8 @@
             controller: 'DownloadsController'
         });
         $routeProvider.when('/contato', {
-            templateUrl: 'templates/contato.html',
-            controller: 'ContatoController'
+            templateUrl: '../templates/contato.html',
+            controller: 'ContactController'
         });
         $routeProvider.otherwise({
             redirectTo: '/player'
