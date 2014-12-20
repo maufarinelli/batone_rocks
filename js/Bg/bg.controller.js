@@ -3,7 +3,7 @@
 (function(angular) {
     var _self;
 
-    function BgController($scope) {
+    function BgController($scope, $rootScope) {
         var windowWidth = window.innerWidth,
             batonePhotoWidth = 1080;
 
@@ -18,11 +18,21 @@
         else {
             this.posRight();
         }
+
+        $rootScope.home = function() {
+            localStorage.removeItem('newVisitor');
+            $scope.newVisitor = true;
+            window.location.reload();
+        }
+
+        window.onunload = function(){
+            localStorage.removeItem('newVisitor');
+        };     
     }
 
     BgController.prototype.animate = function() {
         setTimeout(this.posRight, 3500);
-    }
+    };
 
     BgController.prototype.posRight = function() {
         document.getElementById('bg-photo').style.webkitTransform = 'translateX('+ _self.toMove +'px)';

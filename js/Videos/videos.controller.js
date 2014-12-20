@@ -1,11 +1,9 @@
 'use strict';
 
-(function(angular){
+(function(angular, $){
 
-	function VideosController() {
-
-	}
+	function VideosController($scope) {}
 
 	angular.module('videos', [])
 		.controller('VideosController', VideosController);
-})(angular);
+})(angular, jQuery);
