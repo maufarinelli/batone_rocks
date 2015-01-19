@@ -9,7 +9,7 @@
 			templateUrl: 'templates/videos-container.html',
 			link: function ($scope, element, attrs) {
 				var videoList = element[0].querySelectorAll('.video'),
-					//linkVideo = element[0].querySelectorAll('.fancybox-media'),
+					linkVideo = element[0].querySelectorAll('.fancybox-media'),
 					videoClass = 'video-';
 
 				var randomPos = function() {
@@ -29,14 +29,12 @@
 
 				randomPos();
 
-				/*console.log(linkVideo);
+				console.log(linkVideo);
 
 				$(linkVideo).fancybox({
 					openEffect  : 'none',
 					closeEffect : 'none'
 				});
-
-				console.log($(linkVideo));*/
 			}
 		};
 	}]);

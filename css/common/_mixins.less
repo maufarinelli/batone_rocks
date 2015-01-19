@@ -1,0 +1,14 @@
+.bg-cover() {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.animation(@name, @duration, @timing, @delay) {
+    -webkit-animation: @name @duration @timing @delay; 
+           -moz-animation: @name @duration @timing @delay; 
+            -ms-animation: @name @duration @timing @delay; 
+             -o-animation: @name @duration @timing @delay; 
+                animation: @name @duration @timing @delay;
+}

@@ -1,4 +1,5 @@
 @import 'common/_variables.less';
+@import 'common/_mixins.less';
 
 // Base
 @font-face {
@@ -15,6 +16,7 @@ html {
 
 html, body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -23,10 +25,15 @@ h1 {
     margin: 0.20em 0;
     font-weight: normal; 
     text-transform: uppercase;
+    text-align: center;
 }
 
 p {
     margin: @margin 0;
+}
+
+a {
+    color: @font_color;
 }
 
 
@@ -44,6 +51,7 @@ p {
     width: 100%;
     height: 100%;
     overflow: hidden;
+
 
     background: @bg_color;
 }
@@ -89,7 +97,7 @@ nav > ul {
             left: 0;
             display: none;
 
-            width: 200px;
+            width: 215px;
             margin-top: @margin;
             padding-left: 0;
 
@@ -106,11 +114,13 @@ nav > ul {
 #bg-photo {
     position: absolute;
     width: 100%;
-    min-height: 650px;
+    height: 100%;
+    //min-height: 650px;
     z-index: @z_index_low; 
     
     color: #fff;
     background: url(../img/batone_bg2.jpg) center top no-repeat;
+    .bg-cover;
 
     &.new-visitor {
         -webkit-animation: batone-bg-opacity 5s ease 0s; 
@@ -132,6 +142,19 @@ nav > ul {
     margin: 0 auto;
 
     z-index: @z_index_medium;
+}
+
+.iframe {
+    margin-top: @margin * 10;
+    margin-left: @margin * 2;
+
+    &.new-visitor {
+        opacity: 0;
+        
+        .animation(batone-bg-opacity, 0.5s, ease, 4s);
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
 }
 
 .contact {
@@ -181,19 +204,38 @@ nav > ul {
         width: 120px;
         height: 80px;
         float: left;
+        position: relative;
+        margin-right: @margin;
 
         background-color: @font_color;
+        line-height: 0;
 
-        -webkit-animation: batone-bg-opacity 0.5s ease; 
+        .animation(batone-bg-opacity, 0.5s, ease, 0s);
+
+        /*-webkit-animation: batone-bg-opacity 0.5s ease; 
            -moz-animation: batone-bg-opacity 0.5s ease; 
             -ms-animation: batone-bg-opacity 0.5s ease; 
              -o-animation: batone-bg-opacity 0.5s ease; 
-                animation: batone-bg-opacity 0.5s ease;
+                animation: batone-bg-opacity 0.5s ease;*/
 
        /*-webkit-transition: margin-top 5s ease-out;
               -moz-transition: margin-top 5s ease-out;
                   -o-transition: margin-top 5s ease-out;
                         transition: margin-top 5s ease-out;*/
+
+        img {
+            margin-bottom: @margin;
+        }
+
+        a {
+            font-size: 0.75em;
+        }
+
+        em {
+            display: inline-block;
+            line-height: 1;
+            font-style: normal;
+        }
     }
 
     .video-1 {
@@ -225,6 +267,27 @@ nav > ul {
     }
     .video-10 {
         margin-top: 170px;
+    }
+}
+
+.play-button {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 30px;
+    left: 53px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+    span {
+        position: absolute;
+        top: 3px;
+        left: 5px;
+        width: 0;
+        height: 0;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 8px solid #fff;
     }
 }
 

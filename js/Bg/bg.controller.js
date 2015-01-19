@@ -25,9 +25,9 @@
             window.location.reload();
         }
 
-        window.onunload = function(){
+        /*window.onunload = function(){
             localStorage.removeItem('newVisitor');
-        };     
+        };*/   
     }
 
     BgController.prototype.animate = function() {
