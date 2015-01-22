@@ -3,33 +3,19 @@
 (function(angular, _){
 	var videos = angular.module('videos');
 
-	videos.directive('videosDirective', [function () {
+	videos.directive('videosDirective', ['commonServices', function (commonServices) {
 		return {
 			restrict: 'E',
 			templateUrl: 'templates/videos-container.html',
 			link: function ($scope, element, attrs) {
 				var videoList = element[0].querySelectorAll('.video'),
 					linkVideo = element[0].querySelectorAll('.fancybox-media'),
-					videoClass = 'video-';
+					videoClass = 'video-',
+					randomList = commonServices.randomPos(7);
 
-				var randomPos = function() {
-					var randomList = [];
-					while(randomList.length !== 7) {
-						var n = Math.ceil(Math.random() * 10);
-
-						if(!_.contains(randomList, n)) {
-							randomList.push(n);
-						}
-					}
-
-					_.each(videoList, function(video, index) {
-						video.setAttribute('class', 'video ' + videoClass + randomList[index]);
-					});
-				};
-
-				randomPos();
-
-				console.log(linkVideo);
+				_.each(videoList, function(video, index) {
+					video.setAttribute('class', 'video ' + videoClass + randomList[index]);
+				});
 
 				$(linkVideo).fancybox({
 					openEffect  : 'none',

@@ -6,6 +6,7 @@
         'bg',
         'player',
         'videos',
+        'downloads',
         'contact'
     ])
     .config(['$routeProvider', function($routeProvider) {
