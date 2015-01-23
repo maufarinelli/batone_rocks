@@ -16,20 +16,8 @@
 <body>
 	<div id="wrapper" ng-app="batoneApp">
 		<header>
-			<nav>
-				<ul>
-					<li><a ng-click="home()" href="/#/home"><img src="img/logo2.png" alt="Batone"></a></li>
-					<li class="dropdown">Discos
-						<ul>
-							<li><a href="http://www.batonelixoextraordinario.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Lixo Extraordinário</a></li>
-							<li><a href="http://www.batonebatone.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Disquinho de Bolso</a></li>
-						</ul>
-					</li>
-					<li><a href="/#/videos">Videos</a></li>
-					<li><a href="/#/player">Player</a></li>
-					<li><a href="/#/downloads">Downloads</a></li>
-					<li><a href="/#/contato">Contato</a></li>
-				</ul>
+			<nav ng-controller="MenuController as menu">
+				<menu></menu>
 			</nav>
 		</header>
 		<section id="bg-photo" ng-controller="BgController" ng-class="{'new-visitor': newVisitor}" ></section>
@@ -38,8 +26,8 @@
 	</div>
 	
 	<script src="js/batone-app.js"></script>
-	<script src="js/Bg/bg.controller.js"></script>
-	<script src="js/Common/common.services.js"></script>
+	<script src="js/Common/controllers/bg.controller.js"></script>
+	<script src="js/Common/services/common.services.js"></script>
 
 	<script src="js/external/soundcloud.api.js"></script>
 	<script src="js/Player/player.controller.js"></script>

@@ -1,0 +1,14 @@
+<ul>
+    <li><a ng-click="home()" href="menuItems[0].url"><img src="img/logo2.png" alt="Batone"></a></li>
+    <li class="dropdown">Discos
+        <ul>
+            <li><a href="http://www.batonelixoextraordinario.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Lixo Extraordinário</a></li>
+            <li><a href="http://www.batonebatone.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Disquinho de Bolso</a></li>
+        </ul>
+    </li>
+    <li ng-repeat="menuItem in menuItems | limitTo:-4"
+        ng-class="{is-activated: isMenuItemActive(menuItem)}"
+        ng-click="onMenuItemClick(menuItem)">
+        <a href="menuItem.url">{{menuItem.text}}</a>
+    </li>
+</ul>
