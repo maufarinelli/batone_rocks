@@ -1,5 +1,9 @@
 <ul>
-    <li><a ng-click="home()" href="menuItems[0].url"><img src="img/logo2.png" alt="Batone"></a></li>
+    <li class="logo" ng-repeat="menuItem in menuItems | limitTo:1"
+        ng-class="{'is-activated': isMenuItemActive(menuItem)}"
+        ng-click="onMenuItemClick(menuItem)">
+        <a ng-click="home()" href="{{menuItem.url}}"><img src="img/logo2.png" alt="Batone"></a>
+    </li>
     <li class="dropdown">Discos
         <ul>
             <li><a href="http://www.batonelixoextraordinario.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Lixo Extraordinário</a></li>
@@ -7,8 +11,8 @@
         </ul>
     </li>
     <li ng-repeat="menuItem in menuItems | limitTo:-4"
-        ng-class="{is-activated: isMenuItemActive(menuItem)}"
+        ng-class="{'is-activated': isMenuItemActive(menuItem)}"
         ng-click="onMenuItemClick(menuItem)">
-        <a href="menuItem.url">{{menuItem.text}}</a>
+        <a href="{{menuItem.url}}">{{menuItem.text}}</a>
     </li>
 </ul>

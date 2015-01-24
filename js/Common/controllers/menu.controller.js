@@ -2,6 +2,8 @@
 
 (function(angular) {
     function MenuController($scope) {
+        var _self = this;
+
         $scope.menuItems = [
             {
                 url: '/#/home',
@@ -30,14 +32,14 @@
             },
         ];
 
-        $scope.currentMenuItem = $scope.menuItems[0].id;
+        $scope.currentMenuItem = '/' + window.location.hash;
 
         $scope.onMenuItemClick = function(menuItem) {
-            $scope.currentMenuItem = menuItem.id;
+            $scope.currentMenuItem = menuItem.url;
         };
 
         $scope.isMenuItemActive = function(menuItem) {
-            return $scope.currentMenuItem === menuItem.id;
+            return $scope.currentMenuItem === menuItem.url;
         };
     }
 

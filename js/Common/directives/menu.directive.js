@@ -2,8 +2,10 @@
 
 (function(angular) {
     angular.module('menu')
-        .directive('menu', function() {
-            restrict: 'E',
-            templateUrl: 'templates/menu.html'
+        .directive('mainMenu', function() {
+            return {
+                restrict: 'E',
+                templateUrl: 'templates/menu.html'    
+            }            
         });
 })(angular);

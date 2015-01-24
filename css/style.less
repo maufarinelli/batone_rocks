@@ -68,7 +68,7 @@ header {
     z-index: @z_index_high;
 }
 
-nav > ul {
+nav ul {
     width: @width_large;
     margin: 0 auto;
     padding: 0;
@@ -91,12 +91,31 @@ nav > ul {
             text-decoration: none;
         }
 
+        &.is-activated {
+            a {
+                background-color: @font_color;
+                color: @bg_color;
+
+                img {
+                    -webkit-filter: invert(1);
+                    filter: invert(1);
+                }
+            }
+        }
+
+        &.logo {
+            a {
+                padding-top: @margin;
+                padding-left: 0.6rem;
+            }
+        }
+
         > ul {
             position: absolute;
             left: 0;
             display: none;
 
-            width: 215px;
+            width: 219px;
             margin-top: @margin;
             padding-left: 0;
 
@@ -121,7 +140,7 @@ nav > ul {
     background: url(../img/batone_bg2.jpg) center top no-repeat;
     .bg-cover;
 
-    &.new-visitor {
+    &.home-page {
         -webkit-animation: batone-bg-opacity 5s ease 0s; 
            -moz-animation: batone-bg-opacity 5s ease 0s; 
             -ms-animation: batone-bg-opacity 5s ease 0s; 
@@ -147,17 +166,17 @@ nav > ul {
     margin-top: @margin * 10;
     margin-left: @margin * 2;
 
-    &.new-visitor {
+    &.home-page {
         opacity: 0;
         
-        .animation(batone-bg-opacity, 0.5s, ease, 4s);
+        .animation(batone-bg-opacity, 0.5s, ease, 3.4s);
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
 }
 
 .contact {
-    margin-top: @margin * 7;
+    margin-top: @margin * 10;
     margin-left: @margin * 2.3;
 
     label {

@@ -3,7 +3,7 @@
 (function(angular) {
 
     function PlayerController($scope) {
-        $scope.newVisitor = localStorage.newVisitor ? false : true;
+        $scope.isHomePage = localStorage.isHomePage ? false : true;
     }
 
     angular.module('player', [])

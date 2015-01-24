@@ -10,23 +10,27 @@
         _self = this;
         this.toMove = windowWidth - ((windowWidth - batonePhotoWidth) / 2) - batonePhotoWidth/2;
 
-        $scope.newVisitor = localStorage.newVisitor ? false : true;
+        if(this.isHome()) {
+            localStorage.removeItem('isHomePage');
+        }
+        $scope.isHomePage = localStorage.isHomePage ? false : true;
         
-        if($scope.newVisitor) { 
+        // Animates if it is the homepage
+        if($scope.isHomePage) { 
             this.animate();
         }
         else {
             this.posRight();
         }
 
-        $rootScope.home = function() {
-            localStorage.removeItem('newVisitor');
-            $scope.newVisitor = true;
-            window.location.reload();
-        }
+        /*$rootScope.home = function() {
+            localStorage.removeItem('isHomePage');
+            $scope.isHomePage = true;
+            this.animate();
+        }*/
 
         /*window.onunload = function(){
-            localStorage.removeItem('newVisitor');
+            localStorage.removeItem('isHomePage');
         };*/   
     }
 
@@ -41,7 +45,12 @@
         document.getElementById('bg-photo').style.OTransform = 'translateX('+ _self.toMove +'px)';
         document.getElementById('bg-photo').style.transform = 'translateX('+ _self.toMove +'px)';
 
-        localStorage.newVisitor = false;
+        localStorage.isHomePage = false;
+    };
+
+    BgController.prototype.isHome = function() {
+        console.log(window.location.hash);
+        return window.location.hash === '#/home' || window.location.hash === '' || window.location.hash === '/';
     };
 
     angular.module('bg', [])

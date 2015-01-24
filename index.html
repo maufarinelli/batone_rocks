@@ -16,18 +16,21 @@
 <body>
 	<div id="wrapper" ng-app="batoneApp">
 		<header>
-			<nav ng-controller="MenuController as menu">
-				<menu></menu>
+			<nav ng-controller="MenuController">
+				<main-menu></main-menu>
 			</nav>
 		</header>
-		<section id="bg-photo" ng-controller="BgController" ng-class="{'new-visitor': newVisitor}" ></section>
+		<section id="bg-photo" ng-controller="BgController" ng-class="{'home-page': isHomePage}" ></section>
 		<section class="view" ng-view></section>
 		<footer></footer>
 	</div>
 	
 	<script src="js/batone-app.js"></script>
+	<script src="js/Common/controllers/menu.controller.js"></script>
+	<script src="js/Common/directives/menu.directive.js"></script>
+
 	<script src="js/Common/controllers/bg.controller.js"></script>
-	<script src="js/Common/services/common.services.js"></script>
+	<script src="js/Common/services/common.services.js"></script>	
 
 	<script src="js/external/soundcloud.api.js"></script>
 	<script src="js/Player/player.controller.js"></script>

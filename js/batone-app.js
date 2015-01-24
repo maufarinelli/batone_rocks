@@ -3,13 +3,18 @@
 (function(angular) {
     angular.module('batoneApp', [
         'ngRoute',
-        'bg',
+        'menu',
         'player',
         'videos',
         'downloads',
-        'contact'
+        'contact',
+        'bg'
     ])
     .config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/home', {
+            templateUrl: 'templates/player.html',
+            controller: 'PlayerController'
+        });
         $routeProvider.when('/videos', {
             templateUrl: 'templates/videos.html',
             controller: 'VideosController'
@@ -27,7 +32,7 @@
             controller: 'ContactController'
         });
         $routeProvider.otherwise({
-            redirectTo: '/player'
+            redirectTo: '/home'
         });
     }]);
 })(angular);
