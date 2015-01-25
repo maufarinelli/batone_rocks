@@ -293,12 +293,13 @@ nav ul {
     margin-left: @margin * 2;
 
     .download {
-        max-width: 410px;
+        max-width: 380px;
         float: left;
-        margin-right: @margin;
+        position: relative;
+        margin-right: @margin * 4.2;
 
         img {
-            max-width: 410px;
+            max-width: 380px;
         }
 
         em {
@@ -346,7 +347,7 @@ nav ul {
     position: absolute;
     top: 30px;
     left: 53px;
-    border: 2px solid #fff;
+    border: 2px solid @font_color;
     border-radius: 50%;
 
     span {
@@ -357,7 +358,36 @@ nav ul {
         height: 0;
         border-top: 4px solid transparent;
         border-bottom: 4px solid transparent;
-        border-left: 8px solid #fff;
+        border-left: 8px solid @font_color;
+    }
+}
+
+.download-icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 156px;
+    border: 3px solid @font_color;
+    border-radius: 50%;
+
+    .rect {
+        position: absolute;
+        top: 10px;
+        left: 18px;
+        width: 14px;
+        height: 15px;
+        background-color: @font_color;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid @font_color;
     }
 }
 

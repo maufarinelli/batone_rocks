@@ -8,7 +8,7 @@
             batonePhotoWidth = 1080;
 
         _self = this;
-        this.toMove = windowWidth - ((windowWidth - batonePhotoWidth) / 2) - batonePhotoWidth/2;
+        this.toMove = windowWidth - 40 - ((windowWidth - batonePhotoWidth) / 2) - batonePhotoWidth/2;
 
         if(this.isHome()) {
             localStorage.removeItem('isHomePage');
