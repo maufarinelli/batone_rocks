@@ -16,14 +16,14 @@
                 id: 'videos',
             },
             {
-                url: '/#/player',
-                text: 'Player',
-                id: 'player'
-            },
-            {
                 url: '/#/downloads',
                 text: 'Downloads',
                 id: 'downloads'
+            },
+            {
+                url: '/#/eu',
+                text: 'Eu',
+                id: 'eu'
             },
             {
                 url: '/#/contato',

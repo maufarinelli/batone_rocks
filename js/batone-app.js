@@ -19,9 +19,9 @@
             templateUrl: 'templates/videos.html',
             controller: 'VideosController'
         });
-        $routeProvider.when('/player', {
-            templateUrl: 'templates/player.html',
-            controller: 'PlayerController'
+        $routeProvider.when('/eu', {
+            templateUrl: 'templates/eu.html',
+            controller: 'EuController'
         });
         $routeProvider.when('/downloads', {
             templateUrl: 'templates/downloads.html',
