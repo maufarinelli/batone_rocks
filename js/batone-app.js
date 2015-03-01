@@ -29,7 +29,7 @@
             controller: 'DownloadsController'
         });
         $routeProvider.when('/contato', {
-            templateUrl: '../templates/contato.html',
+            templateUrl: 'templates/contato.html',
             controller: 'ContactController'
         });
         $routeProvider.otherwise({
