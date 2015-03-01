@@ -1,5 +1,5 @@
 <div class="contact">
-	<form action="">
+	<form id="contact-form">
 		<label for="name">
 			<span class="label">Nome:</span>
 			<input type="text" name="name" id="name"><span class="mandatory">*</span>
@@ -15,4 +15,6 @@
 			<button type="submit">Enviar</button>
 		</div>
 	</form>
+	<p class="message-success" ng-show="responseSuccess">Sua mensagem foi enviada com sucesso.</p>
+	<p class="message-error" ng-show="responseError">Não foi possível enviar sua mensagem. Por favor tente novamente.</p>
 </div>

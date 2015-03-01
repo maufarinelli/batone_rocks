@@ -21,17 +21,7 @@
         }
         else {
             this.posRight();
-        }
-
-        /*$rootScope.home = function() {
-            localStorage.removeItem('isHomePage');
-            $scope.isHomePage = true;
-            this.animate();
-        }*/
-
-        /*window.onunload = function(){
-            localStorage.removeItem('isHomePage');
-        };*/   
+        } 
     }
 
     BgController.prototype.animate = function() {
@@ -49,7 +39,6 @@
     };
 
     BgController.prototype.isHome = function() {
-        console.log(window.location.hash);
         return window.location.hash === '#/home' || window.location.hash === '' || window.location.hash === '/';
     };
 

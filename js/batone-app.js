@@ -7,6 +7,7 @@
         'player',
         'videos',
         'downloads',
+        'eu',
         'contact',
         'bg'
     ])
