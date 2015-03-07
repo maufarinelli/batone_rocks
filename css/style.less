@@ -82,6 +82,11 @@ nav ul {
 
         &.dropdown {
             padding: @menu_margin;
+
+            @media screen and (min-width:769px) and (max-width: 959px) {
+                padding-left: 23px;
+                padding-right: 23px;
+            }
         }
 
         a {
@@ -89,6 +94,11 @@ nav ul {
             padding: @menu_margin;
             color: @font_color;
             text-decoration: none;
+
+            @media screen and (min-width:769px) and (max-width: 959px) {
+                padding-left: 23px;
+                padding-right: 23px;
+            }
         }
 
         &.is-activated {
@@ -127,14 +137,29 @@ nav ul {
             display: block;
         }
     }
+
+    @media screen and (min-width:769px) and (max-width: 959px) {
+        width: @width_medium;
+    }
+
+    @media screen and (max-width:768px){
+
+    }
+
+    @media screen and (max-width:959px){
+        
+    }
 }
 
 #bg-photo {
     position: absolute;
     width: 100%;
     height: 100%;
-    //min-height: 650px;
     z-index: @z_index_low; 
+
+    @media screen and (orientation: portrait) {
+        width: 165%;
+    }
     
     color: #fff;
     background: url(../img/batone_bg2.jpg) center top no-repeat;
@@ -160,11 +185,21 @@ nav ul {
     margin: 0 auto;
 
     z-index: @z_index_medium;
+
+    @media screen and (max-width:959px){
+        width: @width_medium;
+        padding: 0 10px;
+    }
 }
 
 .iframe {
     margin-top: @margin * 10;
     margin-left: @margin * 2;
+
+    @media screen and (max-width:959px){
+        width: 95%;
+        margin-left: 0;
+    }
 
     &.home-page {
         opacity: 0;
@@ -178,6 +213,11 @@ nav ul {
 .contact {
     margin-top: @margin * 10;
     margin-left: @margin * 2.3;
+
+    @media screen and (max-width:959px){
+        margin-left: 0;
+        padding-right: 10px;
+    }
 
     label {
         display: block;
@@ -200,12 +240,22 @@ nav ul {
     input, textarea {
         width: 515px;
         color: @bg_color;
+
+        @media screen and (max-width:768px){
+            width: 65%;
+        }
     }
 }
 
 .contact-submit {
     margin-left: @width_large / 3;
     margin-bottom: @margin * 4; 
+
+    @media screen and (max-width:768px){
+        width: @width_small;
+        margin-left: 0;
+        text-align: center;
+    }
 
     button {
         background-color: @font_color;
@@ -238,17 +288,6 @@ nav ul {
         line-height: 0;
 
         .animation(batone-bg-opacity, 0.5s, ease, 0s);
-
-        /*-webkit-animation: batone-bg-opacity 0.5s ease; 
-           -moz-animation: batone-bg-opacity 0.5s ease; 
-            -ms-animation: batone-bg-opacity 0.5s ease; 
-             -o-animation: batone-bg-opacity 0.5s ease; 
-                animation: batone-bg-opacity 0.5s ease;*/
-
-       /*-webkit-transition: margin-top 5s ease-out;
-              -moz-transition: margin-top 5s ease-out;
-                  -o-transition: margin-top 5s ease-out;
-                        transition: margin-top 5s ease-out;*/
 
         img {
             margin-bottom: @margin;
@@ -307,8 +346,20 @@ nav ul {
         position: relative;
         margin-right: @margin * 4.2;
 
+        @media screen and (max-width:959px){
+            max-width: 40%;
+        }
+
+        @media screen and (max-width:480px){
+            max-width: 35%;
+        }
+
         img {
             max-width: 380px;
+
+            @media screen and (max-width:959px){
+                max-width: 100%;
+            }
         }
 
         em {
@@ -379,6 +430,15 @@ nav ul {
     border: 3px solid @font_color;
     border-radius: 50%;
 
+    @media screen and (max-width: 520px){
+        width: 35px;
+        height: 35px;
+    }
+
+    @media screen and (max-width:480px){
+        display: none;
+    }
+
     .rect {
         position: absolute;
         top: 10px;
@@ -386,6 +446,13 @@ nav ul {
         width: 14px;
         height: 15px;
         background-color: @font_color;
+
+        @media screen and (max-width: 520px){
+            top: 6px;
+            left: 11px;
+            width: 12px;
+            height: 14px;
+        }
     }
 
     .arrow {
@@ -397,6 +464,14 @@ nav ul {
         border-left: 15px solid transparent;
         border-right: 15px solid transparent;
         border-top: 15px solid @font_color;
+
+        @media screen and (max-width: 520px){
+            top: 20px;
+            left: 6px;
+            border-left-width: 12px;
+            border-right-width: 12px;
+            border-top-width: 11px;
+        }
     }
 }
 
@@ -410,6 +485,11 @@ nav ul {
 
     p {
         margin: 1rem 0;
+    }
+
+    @media screen and (max-width:959px){
+        margin-left: 0;
+        padding-right: 10px;
     }
 }
 
