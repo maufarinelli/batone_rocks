@@ -36,6 +36,10 @@ a {
     color: @font_color;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 // Utils
 .margin-bottom {
@@ -68,7 +72,8 @@ header {
     z-index: @z_index_high;
 }
 
-nav ul {
+nav .menu-desktop {
+    display: block;
     width: @width_large;
     margin: 0 auto;
     padding: 0;
@@ -143,11 +148,86 @@ nav ul {
     }
 
     @media screen and (max-width:768px){
+        display: none;
+    }
+}
 
+nav .menu-mobile {
+    display: none;
+    width: @width_small;
+
+    .logo {
+        display: inline-block;
+        padding-top: 10px;
+
+        a {
+            padding: 15px;
+        }
+
+        &.is-activated {
+            background-color: @font_color;
+
+            img {
+                -webkit-filter: invert(1);
+                filter: invert(1);
+            }
+        }
     }
 
-    @media screen and (max-width:959px){
-        
+    .menu-mobile-toggle {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 45px;
+        cursor: pointer;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;    
+            height: 4px;
+            border-top: 14px double @font_color;
+            border-bottom: 5px solid @font_color;
+        }
+    }
+
+    .menu-mobile-list {
+        display: none;
+        margin: 0;
+        padding-left: 15px;
+        list-style: none;
+        text-align: right;
+
+        &.is-opened {
+            display: block;
+        }
+    }
+
+    li {
+        display: block;
+        color: @font_color;
+        cursor: pointer;
+        border-bottom: 1px @font_color solid;
+
+        a {
+            display: block;
+            padding: 10px;
+            color: @font_color;
+            text-decoration: none;
+        }
+
+        &.is-activated {
+            a {
+                background-color: @font_color;
+                color: @bg_color;
+            }
+        }
+    }
+
+    @media screen and (max-width:768px){
+        display: block;
     }
 }
 
@@ -283,7 +363,7 @@ nav ul {
         display: inline-block;
         position: relative;
         margin-right: @margin;
-        margin-bottom: 65px;
+        margin-bottom: 80px;
 
         line-height: 0;
 
@@ -301,6 +381,10 @@ nav ul {
             display: inline-block;
             line-height: 1;
             font-style: normal;
+        }
+
+        @media screen and (max-width:480px){
+            max-width: 45%;
         }
     }
 

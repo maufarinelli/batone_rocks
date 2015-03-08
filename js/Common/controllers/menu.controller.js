@@ -31,6 +31,7 @@
                 id: 'contato'
             },
         ];
+        $scope.isMenuToggleOpened = false;
 
         $scope.currentMenuItem = '/' + window.location.hash;
 
@@ -41,6 +42,10 @@
         $scope.isMenuItemActive = function(menuItem) {
             return $scope.currentMenuItem === menuItem.url;
         };
+
+        $scope.onMenuToggle = function() {
+            $scope.isMenuToggleOpened = !$scope.isMenuToggleOpened;
+        }
     }
 
     angular.module('menu', [])

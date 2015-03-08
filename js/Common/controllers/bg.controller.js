@@ -21,7 +21,7 @@
         }
         else {
             this.posRight();
-        } 
+        }
     }
 
     BgController.prototype.animate = function() {

@@ -1,4 +1,4 @@
-<ul>
+<ul class="menu-desktop">
     <li class="logo" ng-repeat="menuItem in menuItems | limitTo:1"
         ng-class="{'is-activated': isMenuItemActive(menuItem)}"
         ng-click="onMenuItemClick(menuItem)">
@@ -16,3 +16,21 @@
         <a href="{{menuItem.url}}">{{menuItem.text}}</a>
     </li>
 </ul>
+
+<div class="menu-mobile">
+    <span class="logo" ng-repeat="menuItem in menuItems | limitTo:1"
+        ng-class="{'is-activated': isMenuItemActive(menuItem)}" 
+        ng-click="onMenuItemClick(menuItem)">
+        <a ng-click="home()" href="{{menuItem.url}}"><img src="img/logo2.png" alt="Batone"></a>
+    </span>
+    <i class="menu-mobile-toggle" ng-click="onMenuToggle()"></i>
+    <ul class="menu-mobile-list" ng-class="{'is-opened': isMenuToggleOpened}">
+        <li><a href="http://www.batonelixoextraordinario.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Disco - Lixo Extraordinário</a></li>
+        <li><a href="http://www.batonebatone.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Disco - Disquinho de Bolso</a></li>
+        <li ng-repeat="menuItem in menuItems | limitTo:-4"
+            ng-class="{'is-activated': isMenuItemActive(menuItem)}"
+            ng-click="onMenuItemClick(menuItem)">
+            <a href="{{menuItem.url}}">{{menuItem.text}}</a>
+        </li>
+    </ul>
+</div>

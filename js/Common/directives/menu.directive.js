@@ -5,7 +5,7 @@
         .directive('mainMenu', function() {
             return {
                 restrict: 'E',
-                templateUrl: 'templates/menu.html'    
+                templateUrl: 'templates/menu.html'
             }            
         });
 })(angular);
