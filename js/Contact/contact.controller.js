@@ -9,9 +9,7 @@
         var form = $('#contact-form');
 
     	form.on('submit', function(event) {
-            $.post('send.php', form.serialize(), function(result) {
-                console.log(result);
-
+            $.post('templates/send.php', form.serialize(), function(result) {
                 if(result > 0) {
                     $scope.responseSuccess = true;
                     $scope.responseError = false;
@@ -20,6 +18,7 @@
                     $scope.responseSuccess = false;
                     $scope.responseError = true;
                 }
+                $scope.$apply();
             });
             event.preventDefault();
         });
