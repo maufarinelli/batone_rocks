@@ -67,6 +67,10 @@ header {
     z-index: @z_index_high;
 }
 
+/*.ng-hide:not(.ng-hide-animate) {
+    display: none !important;
+}*/
+
 nav .menu-desktop {
     display: block;
     width: @width_large;
@@ -189,14 +193,22 @@ nav .menu-mobile {
     }
 
     .menu-mobile-list {
-        display: none;
         margin: 0;
         padding-left: 15px;
         list-style: none;
         text-align: right;
+        opacity: 1;
+        line-height: 20px;
 
-        &.is-opened {
-            display: block;
+        &.ng-hide {
+            opacity: 0;
+            line-height: 0;
+        }
+
+        &.ng-hide-add,
+        &.ng-hide-remove{
+            -webkit-transition: all linear 3s;
+            transition: all linear 3s;
         }
     }
 

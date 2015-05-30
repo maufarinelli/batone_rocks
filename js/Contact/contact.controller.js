@@ -11,7 +11,7 @@
     	form.on('submit', function(event) {
             $.post('templates/send.php', form.serialize(), function(result) {
                 if(result > 0) {
-                    $scope.responseSuccess = true;
+                    $scope.responseSuccess = true; // temporary, unitl fix the bug of mail send
                     $scope.responseError = false;
                 }
                 else {
