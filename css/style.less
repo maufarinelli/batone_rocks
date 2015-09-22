@@ -190,16 +190,26 @@ nav .menu-mobile {
         padding-top: 10px;
 
         a {
-            padding: 15px;
+            display: inline-block;
+            margin-left: 15px;
+            width: 220px;
+            height: 60px;
+            padding: 0;
+
+            background: url(../img/logo2.png) 0 0 no-repeat;
         }
 
         &.is-activated {
             //background-color: @font_color;
-            color: @active_color;
+            //color: @active_logo;
 
-            img {
+            /*img {
                 -webkit-filter: invert(1);
                 filter: invert(1);
+            }*/
+            a {
+                background-color: @active_logo;
+                background-blend-mode: darken;
             }
         }
     }
