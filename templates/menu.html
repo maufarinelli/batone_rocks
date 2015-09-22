@@ -8,7 +8,7 @@
     <li class="logo" ng-repeat="menuItem in menuItems | limitTo:1"
         ng-class="{'is-activated': isMenuItemActive(menuItem)}"
         ng-click="onMenuItemClick(menuItem)">
-        <a ng-click="home()" href="{{menuItem.url}}"><img src="img/logo2.png" alt="Batone"></a>
+        <a ng-click="home()" href="{{menuItem.url}}"></a>
     </li>
     <li class="dropdown">{{'menu.albums' | translate}}
         <ul>
@@ -16,10 +16,15 @@
             <li><a href="http://www.batonebatone.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Disquinho de Bolso</a></li>
         </ul>
     </li>
-    <li ng-repeat="menuItem in menuItems | limitTo:-4"
+    <li ng-repeat="menuItem in menuItems | limitTo:-3"
         ng-class="{'is-activated': isMenuItemActive(menuItem)}"
         ng-click="onMenuItemClick(menuItem)">
         <a href="{{menuItem.url}}">{{menuItem.text}}</a>
+    </li>
+    <li class="menu-contact">
+        <a href="https://www.facebook.com/batone?fref=ts" target="_blank">
+            <img src="img/logo-facebook.png" alt="Facebook">
+        </a>
     </li>
 </ul>
 
@@ -33,10 +38,15 @@
     <ul class="menu-mobile-list" ng-show="isMenuToggleOpened">
         <li><a href="http://www.batonelixoextraordinario.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Disco - Lixo Extraordinário</a></li>
         <li><a href="http://www.batonebatone.blogspot.ca" target="_blank" title="O conteúdo será aberto em uma nova janela">Disco - Disquinho de Bolso</a></li>
-        <li ng-repeat="menuItem in menuItems | limitTo:-4"
+        <li ng-repeat="menuItem in menuItems | limitTo:-3"
             ng-class="{'is-activated': isMenuItemActive(menuItem)}"
             ng-click="onMenuItemClick(menuItem)">
             <a href="{{menuItem.url}}">{{menuItem.text}}</a>
+        </li>
+        <li class="menu-contact">
+            <a href="https://www.facebook.com/batone?fref=ts" target="_blank">
+                <img src="img/logo-facebook.png" alt="Facebook">
+            </a>
         </li>
     </ul>
 </div>

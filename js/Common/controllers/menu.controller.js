@@ -33,11 +33,6 @@
                     url: '/#/eu',
                     text: $scope.traslatedText['menu.eu'],
                     id: 'eu'
-                },
-                {
-                    url: '/#/contato',
-                    text: $scope.traslatedText['menu.contact'],
-                    id: 'contato'
                 }
             ];
         });
