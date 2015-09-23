@@ -3,6 +3,7 @@
 (function(angular) {
     angular.module('batoneApp', [
         'ngRoute',
+        'ngAnimate',
         'pascalprecht.translate', 
         'i18n',
         'menu',

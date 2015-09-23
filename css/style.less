@@ -20,7 +20,6 @@ h1 {
     margin: 0.20em 0;
     font-weight: normal; 
     text-transform: uppercase;
-    //text-align: center;
 }
 
 p {
@@ -56,7 +55,6 @@ img {
 
 header {
     font-family: @wire_font_family;
-    //font-family: 'Raleway', sans-serif;
 
     text-transform: uppercase;
     position: fixed;
@@ -66,10 +64,6 @@ header {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: @z_index_high;
 }
-
-/*.ng-hide:not(.ng-hide-animate) {
-    display: none !important;
-}*/
 
 nav .menu-languages {
     position: fixed;
@@ -200,13 +194,6 @@ nav .menu-mobile {
         }
 
         &.is-activated {
-            //background-color: @font_color;
-            //color: @active_logo;
-
-            /*img {
-                -webkit-filter: invert(1);
-                filter: invert(1);
-            }*/
             a {
                 background-color: @active_logo;
                 background-blend-mode: darken;
@@ -241,16 +228,19 @@ nav .menu-mobile {
         opacity: 1;
         line-height: 20px;
 
-        &.ng-hide {
-            opacity: 0;
-            line-height: 0;
+        &.ng-hide-add,
+        &.ng-hide-remove {
+            -webkit-transition: opacity linear 0.2s;
+            transition: opacity linear 0.2s;
         }
 
-        &.ng-hide-add,
-        &.ng-hide-remove{
-            -webkit-transition: all linear 3s;
-            transition: all linear 3s;
+        &.ng-hide {
+            opacity: 0;
         }
+
+        &.is-hidden {
+            display: none;
+        } 
     }
 
     li {

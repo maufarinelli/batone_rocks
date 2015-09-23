@@ -1,7 +1,7 @@
 'use strict';
 
 (function(angular) {
-    function MenuController($scope, $translate, enText, frText, ptText) {
+    function MenuController($scope, $translate, $timeout, enText, frText, ptText) {
         var _self = this,
             menu;
 
@@ -50,7 +50,9 @@
 
         $scope.onMenuItemClick = function(menuItem) {
             $scope.currentMenuItem = menuItem.url;
-            $scope.onMenuToggle();
+            if(menuItem.id !== 'home') {
+                $scope.onMenuToggle();
+            }
         };
 
         $scope.isMenuItemActive = function(menuItem) {
