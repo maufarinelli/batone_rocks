@@ -4,6 +4,8 @@
     angular.module('i18n')
         .factory('enText', function() {
             return {
+                'title.site': 'Batone.rocks - Songs, texts and stories of Batone',
+
                 'menu.albums': 'Albums',
                 'menu.videos': 'Videos',
                 'menu.eu': 'About me',
