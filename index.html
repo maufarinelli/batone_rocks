@@ -2,17 +2,36 @@
 <html>
 <head>
 	<meta charset="utf8">
+	<meta name="description" content="Batone.rocks - Música e textos, contos e canções de Batone">
+	<meta name="keywords" content="Batone.rocks, batone, Música">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<title>Batone</title>
+	<meta property="og:title" content="Batone.rocks" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Música e textos, contos e canções de Batone" />
+	<meta property="og:site_name" content="Batone.rocks" />
+	<meta property="og:image" content="http://batone.rocks/img/batone_bg2.jpg" />
+	<title>Batone.rocks</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link href='http://fonts.googleapis.com/css?family=Wire+One|Muli|Yanone+Kaffeesatz:400,300|Raleway:400,500' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="js/external/angular.min.js"></script>
 	<script src="js/external/angular-route.min.js"></script>
+	<script src="js/external/angular-animate.min.js"></script>
 	<script src="js/external/lodash.js"></script>
 	<script type="text/javascript" src="js/external/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" src="js/external/jquery.fancybox.js?v=2.1.5"></script>
 	<link rel="stylesheet" type="text/css" href="css/external/jquery.fancybox.css?v=2.1.5" />
+	<script src="js/external/angular-translate.min.js"></script>
+	<script src="js/external/soundcloud.api.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-67792080-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 </head>
 <body>
 	<div id="wrapper" ng-app="batoneApp">
@@ -25,25 +44,7 @@
 		<section class="view" ng-view></section>
 		<footer></footer>
 	</div>
-	
-	<script src="js/batone-app.js"></script>
-	<script src="js/Common/controllers/menu.controller.js"></script>
-	<script src="js/Common/directives/menu.directive.js"></script>
 
-	<script src="js/Common/controllers/bg.controller.js"></script>
-	<script src="js/Common/services/common.services.js"></script>	
-
-	<script src="js/external/soundcloud.api.js"></script>
-	<script src="js/Player/player.controller.js"></script>
-	
-	<script src="js/Videos/videos.controller.js"></script>
-	<script src="js/Videos/videos.directive.js"></script>
-
-	<script src="js/Downloads/downloads.controller.js"></script>
-	<script src="js/Downloads/downloads.directive.js"></script>
-
-	<script src="js/Eu/eu.controller.js"></script>
-
-	<script src="js/Contact/contact.controller.js"></script>
+	<script src="build.min.js"></script>
 </body>
 </html>

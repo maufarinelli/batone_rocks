@@ -1,7 +1,7 @@
 @import 'common/_variables.less';
 @import 'common/_mixins.less';
 
-// Base
+// Base HTML
 html {
     font-family: @base_font_family;
     font-size: @base_font_size;
@@ -20,7 +20,6 @@ h1 {
     margin: 0.20em 0;
     font-weight: normal; 
     text-transform: uppercase;
-    //text-align: center;
 }
 
 p {
@@ -56,7 +55,6 @@ img {
 
 header {
     font-family: @wire_font_family;
-    //font-family: 'Raleway', sans-serif;
 
     text-transform: uppercase;
     position: fixed;
@@ -65,6 +63,24 @@ header {
     right: 0;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: @z_index_high;
+}
+
+nav .menu-languages {
+    position: fixed;
+    right: 10px;
+    top: 0;
+
+    button {
+        width: 30px;
+        height: 20px;
+        line-height: 0.3;
+        
+        padding: 0;
+        border: none;
+        background: none;
+        -webkit-appearance: none;
+        outline: none;
+    }
 }
 
 nav .menu-desktop {
@@ -103,20 +119,32 @@ nav .menu-desktop {
 
         &.is-activated {
             a {
-                background-color: @font_color;
-                color: @bg_color;
-
-                img {
-                    -webkit-filter: invert(1);
-                    filter: invert(1);
-                }
+                color: @active_color;
             }
         }
 
         &.logo {
+            margin-left: 20px;
+
             a {
-                padding-top: @margin;
-                padding-left: 0.6rem;
+                width: 220px;
+                height: 60px;
+                padding: 0;
+
+                background: url(../img/logo2.png) 0 0 no-repeat;
+            }
+
+            &.is-activated {
+                a {
+                    background-color: @active_logo;
+                    background-blend-mode: darken;
+                }
+            }
+        }
+
+        &.menu-contact {
+            img {
+                width: 26px;
             }
         }
 
@@ -156,15 +184,19 @@ nav .menu-mobile {
         padding-top: 10px;
 
         a {
-            padding: 15px;
+            display: inline-block;
+            margin-left: 15px;
+            width: 220px;
+            height: 60px;
+            padding: 0;
+
+            background: url(../img/logo2.png) 0 0 no-repeat;
         }
 
         &.is-activated {
-            background-color: @font_color;
-
-            img {
-                -webkit-filter: invert(1);
-                filter: invert(1);
+            a {
+                background-color: @active_logo;
+                background-blend-mode: darken;
             }
         }
     }
@@ -189,15 +221,26 @@ nav .menu-mobile {
     }
 
     .menu-mobile-list {
-        display: none;
         margin: 0;
         padding-left: 15px;
         list-style: none;
         text-align: right;
+        opacity: 1;
+        line-height: 20px;
 
-        &.is-opened {
-            display: block;
+        &.ng-hide-add,
+        &.ng-hide-remove {
+            -webkit-transition: opacity linear 0.2s;
+            transition: opacity linear 0.2s;
         }
+
+        &.ng-hide {
+            opacity: 0;
+        }
+
+        &.is-hidden {
+            display: none;
+        } 
     }
 
     li {
@@ -217,6 +260,12 @@ nav .menu-mobile {
             a {
                 background-color: @font_color;
                 color: @bg_color;
+            }
+        }
+
+        &.menu-contact {
+            img {
+                width: 22px;
             }
         }
     }
@@ -283,70 +332,6 @@ nav .menu-mobile {
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
-}
-
-.contact {
-    margin-top: @margin * 10;
-    margin-left: @margin * 2.3;
-
-    @media screen and (max-width:959px){
-        margin-left: 0;
-        padding-right: 10px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: @margin;
-
-        span {
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        .label {
-            width: 90px;
-        }
-
-        .mandatory {
-            margin-left: @margin;
-        }
-    }
-
-    input, textarea {
-        width: 515px;
-        color: @bg_color;
-
-        @media screen and (max-width:768px){
-            width: 65%;
-        }
-    }
-}
-
-.contact-submit {
-    margin-left: @width_large / 3;
-    margin-bottom: @margin * 4; 
-
-    @media screen and (max-width:768px){
-        width: @width_small;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    button {
-        background-color: @font_color;
-        color: @bg_color;
-        text-transform: uppercase;
-        box-shadow: 1px 2px 4px #777;
-        border: 0;
-    }
-}
-
-.message-success {
-    color: #91E338;
-}
-
-.message-error {
-    color: #cd4236;
 }
 
 .videos {
@@ -558,7 +543,7 @@ nav .menu-mobile {
     margin-top: @margin * 10;
     margin-left: @margin * 2;
 
-    font-family: Verdana, Arial, sans-serif;
+    font-family: 'Andale Mono', 'Courier New', monospace;
     font-size: @base_font_size / 2;
     text-transform: none;
 

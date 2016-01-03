@@ -30,7 +30,11 @@
       ->setFrom(array($email => $name))
 
       // Set the To addresses with an associative array
-      ->setTo(array('maufarinelli@gmail.com', 'maufarinelli@gmail.com' => 'Mauricio Receive'))
+      //->setTo(array('batone.neto@gmail.com', 'batone.neto@gmail.com' => 'Valdir Batone'))
+      ->setTo(array('mauricio@farinelliwebdesign.com' => 'Mauricio Receive'))
+
+      // For now CC to me
+      //->setBcc(array('maufarinelli@gmail.com', 'maufarinelli@gmail.com' => 'Mauricio Receive'))
 
       // Give it a body
       ->setBody($messageBody);
