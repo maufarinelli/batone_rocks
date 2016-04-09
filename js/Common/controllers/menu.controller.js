@@ -1,8 +1,8 @@
 'use strict';
 
 (function(angular) {
-    function MenuController($scope, $translate, $timeout, enText, frText, ptText) {
-        var _self = this,
+    function MenuController($scope, $translate, enText, frText, ptText) {
+        var self = this,
             menu;
 
         var traslatedTexts = {
@@ -12,17 +12,22 @@
         };
         $scope.traslatedText = traslatedTexts.en;
 
-        $scope.$watch('currentLanguage', function(o, n) {
-            $scope.menuItems = [
+        $scope.$watch('menuCtrl.currentLanguage', function(o, n) {
+            self.menuItems = [
                 {
                     url: '/#/home',
                     text: 'Batone',
                     id: 'home'
                 },
                 {
+                    url: 'http://www.batone.bandcamp.com',
+                    text: $scope.traslatedText['menu.albums'],
+                    id: 'albums'
+                },
+                {
                     url: '/#/videos',
                     text: $scope.traslatedText['menu.videos'],
-                    id: 'videos',
+                    id: 'videos'
                 },
                 {
                     url: '/#/downloads',
@@ -37,30 +42,30 @@
             ];
         });
 
-        $scope.isMenuToggleOpened = false;
+        self.isMenuToggleOpened = false;
 
-        $scope.currentMenuItem = '/' + window.location.hash;
-        $scope.currentLanguage = 'en';
+        self.currentMenuItem = '/' + window.location.hash;
+        self.currentLanguage = 'en';
 
-        $scope.changeLanguage = function(key) {
+        self.changeLanguage = function(key) {
             $translate.use(key);
-            $scope.currentLanguage = key;
+            self.currentLanguage = key;
             $scope.traslatedText = traslatedTexts[key];
         };
 
-        $scope.onMenuItemClick = function(menuItem) {
-            $scope.currentMenuItem = menuItem.url;
+        self.onMenuItemClick = function(menuItem) {
+            self.currentMenuItem = menuItem.url;
             if(menuItem.id !== 'home') {
-                $scope.onMenuToggle();
+                self.onMenuToggle();
             }
         };
 
-        $scope.isMenuItemActive = function(menuItem) {
-            return $scope.currentMenuItem === menuItem.url;
+        self.isMenuItemActive = function(menuItem) {
+            return self.currentMenuItem === menuItem.url;
         };
 
-        $scope.onMenuToggle = function() {
-            $scope.isMenuToggleOpened = !$scope.isMenuToggleOpened;
+        self.onMenuToggle = function() {
+            self.isMenuToggleOpened = !self.isMenuToggleOpened;
         }
     }
 

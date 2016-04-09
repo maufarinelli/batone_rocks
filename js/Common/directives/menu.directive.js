@@ -6,6 +6,8 @@
             return {
                 restrict: 'E',
                 templateUrl: 'templates/menu.html',
+                controller: 'MenuController',
+                controllerAs: 'menuCtrl',
                 link: function(scope, element) {
                     var menuMobileList = element[0].querySelector('.menu-mobile-list');
 
